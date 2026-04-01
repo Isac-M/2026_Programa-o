@@ -18,7 +18,6 @@ for i in range(10):
     pais = Pais(nome, populacao, area)
     paises.append(pais)
 
-# Encontrar país com maior densidade
 maior = paises[0]
 
 for pais in paises:
