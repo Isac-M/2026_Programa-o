@@ -13,7 +13,6 @@ class Agua:
             return 38.00 + (10 * 5.00) + (self.consumo - 20) * 6.00
 
 
-# Programa principal
 mes = input("Digite o mês: ")
 ano = int(input("Digite o ano: "))
 consumo = float(input("Digite o consumo em m³: "))
