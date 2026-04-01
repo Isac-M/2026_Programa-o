@@ -1,5 +1,9 @@
-a = int(input())
-b = int(input())
+a = int(input("Digite o primeiro valor: "))
+b = int(input("Digite o segundo valor: "))
 
 if a > b:
-    print ("Maior = a")
+    print(f"Maior = {a}")
+elif b > a:
+    print(f"Maior = {b}")
+else:
+    print("Números iguais")
