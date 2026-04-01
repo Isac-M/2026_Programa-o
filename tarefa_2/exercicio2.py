@@ -7,8 +7,6 @@ class Pais:
     def densidade_demografica(self):
         return self.populacao / self.area
 
-
-# Programa principal
 paises = []
 
 for i in range(10):
