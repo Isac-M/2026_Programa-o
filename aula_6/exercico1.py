@@ -22,7 +22,7 @@ class Contato:
         return f"{self.__id} - {self.__nome} - {self.__email} - {self.__fone}"
     
 class ContatoUI:
-    contatos = [] #atributo de classe - é uma lista de contatos
+    contatos = []
     @staticmethod
     def main():
         op = 0
