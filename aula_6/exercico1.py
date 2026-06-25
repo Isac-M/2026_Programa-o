@@ -1,9 +1,9 @@
 class Contato:
     def __init__(self, id, nome, email, fone):
-        self.set_id(id)
-        self.set_nome(nome)
-        self.set_email(email)
-        self.set_fone(fone)
+        self.id = id
+        self.nome = nome
+        self.email = email
+        self.fone = fone
     def set_id(self, id):
         if id < 0: raise ValueError("id deve ser positivo")
         self.__id = id
