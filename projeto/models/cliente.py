@@ -17,7 +17,7 @@ class Cliente:
     def set_email(self, email):
         if email == "": raise ValueError ("E-mail deve ser informado")
         self.__email = email
-    def set_fome(self, fone):
+    def set_fone(self, fone):
         if fone == "": raise ValueError ("Fone deve ser informado")
         self.__fone = fone
 
