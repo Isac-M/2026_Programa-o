@@ -21,7 +21,8 @@ class UI:
         nome = input("Informe o nome: ")
         email = input("Informe o email: ")
         fone = input("Informe o telefone: ")
-        Service.cliente_inserir(id, nome, email, fone)
+        convenio = input("Informe o convenio: ")
+        Service.cliente_inserir(id, nome, email, fone, convenio)
 
     @staticmethod
     def cliente_excluir():
