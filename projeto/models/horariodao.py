@@ -1,12 +1,14 @@
 from models.horario import Horario
 import json
+
 class HorarioDAO:
     def __init__(self):
-       self.__arquivo = "horarios.json"
-       self.__objetos = []
-       self.__abrir()
+        self.__arquivo = "horarios.json"
+        self.__objetos = []
+        self.__abrir()
 
     def inserir(self, obj):
+        # gerar um novo id com o maior valor existente mais um
         id = 0
         if len(self.__objetos) > 0:
             for aux in self.__objetos:
@@ -15,7 +17,7 @@ class HorarioDAO:
         self.__objetos.append(obj)
         self.__salvar()
 
-    def listar(self):
+    def listar(self):                
         return self.__objetos
 
     def listar_id(self, id):
@@ -25,7 +27,7 @@ class HorarioDAO:
 
     def atualizar(self, obj):
         aux = self.listar_id(obj.get_id())
-        if aux != None: 
+        if aux != None:
             self.__objetos.remove(aux)
             self.__objetos.append(obj)
             self.__salvar()
@@ -36,8 +38,8 @@ class HorarioDAO:
             self.__objetos.remove(aux)
             self.__salvar()
 
-    def __abrir(self):
-        try:
+    def __abrir(self):  
+        try:  
             arquivo = open(self.__arquivo, mode = "r")
             list_dic = json.load(arquivo)
             arquivo.close()
@@ -48,8 +50,7 @@ class HorarioDAO:
         except FileNotFoundError:
             pass
 
-    def __salvar(self):
+    def __salvar(self):    
         arquivo = open(self.__arquivo, mode = "w")
-        json.dump(self.__objetos, arquivo, default = Horario.to_json,
-                indent = 2)
+        json.dump(self.__objetos, arquivo, default = Horario.to_json, indent = 2)
         arquivo.close()
