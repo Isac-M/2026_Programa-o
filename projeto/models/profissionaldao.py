@@ -55,3 +55,4 @@ class ProfissionalDAO:
         json.dump(self.__objetos, arquivo, default = Profissional.to_json, indent = 2)
         arquivo.close()
         
+        
