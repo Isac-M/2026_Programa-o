@@ -13,6 +13,9 @@ from templates.abrirminhaagendaui import AbrirMinhaAgendaUI
 from templates.visualizarmeusservicosui import VisualizarMeusServicosUI
 from templates.visualizarminhaagendaui import VisualizarMinhaAgendaUI
 from templates.confirmarservicoui import ConfirmarServicoUI
+from templates.listarhorariosconfirmadoshojeui import ListarHorariosConfirmadosHojeUI
+from templates.listaragendaprofissionalui import ListarAgendaProfissionalUI
+
 from service import Service
 import streamlit as st
 
@@ -44,6 +47,8 @@ class IndexUI:
         if op == "Horários": ManterHorarioUI.main()
         if op == "Profissionais": ManterProfissionalUI.main()
         if op == "Atendimentos": ManterAtendimentoUI.main()
+        if op == "Horarios confirmados hoje": ListarHorariosConfirmadosHojeUI.main()
+        if op == "Agenda profissional": ListarAgendaProfissionalUI.main()
 
     def sair_do_sistema():
         if st.sidebar.button("Sair"):
@@ -64,9 +69,7 @@ class IndexUI:
             IndexUI.sair_do_sistema()
 
     def main():
-        # verifica a existe o usuário admin
         Service.cliente_criar_admin()
-        # monta o sidebar
         IndexUI.sidebar()
 
 IndexUI.main()

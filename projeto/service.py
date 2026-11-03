@@ -183,4 +183,21 @@ class Service:
         for c in Service.profissional_listar():
             if c.get_email() == email and c.get_senha() == senha:
                 return {"id": c.get_id(), "nome": c.get_nome()}
-        return None
+            return None
+    @staticmethod
+    def horario_listar_confirmados_hoje():
+        r = []
+        hoje = datetime.today().date()
+        for h in Service.horario_listar():
+            if h.get_confirmado() == True and h.get_data().date() == hoje:
+                r.append(h)
+        r.sort(key = lambda h : h.get_data())
+        return r
+    @staticmethod
+    def horario_listar_agenda_profissional(id_profissional):
+            r = []
+            for h in Service.horario_listar():
+                if h.get_profissional() == id_profissional:
+                    r.append(h)
+            r.sort(key = lambda h : h.get_data())
+            return r
